@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>While</title>
+
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+
+        #header {
+            text-align: center;
+        }
+
+        div {
+            background-color: cadetblue;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h1 id="header">
+
+        </h1>
+
+    </div>
+
+    <script type="text/javascript">
+
+        //Example of while
+        // var days = ["Monday","Tusday","Wensday","Thursday","Friday","Saturday","Sanday"];
+
+        // var numberDays = days.length-1;
+        // var i = 0;
+
+        // while(i <= numberDays){
+        //         document.write(days[i]+"<br>");
+        //         i++;
+        // }
+
+        var response;
+
+        do {
+
+            var value;
+            var array = [];
+            var i = 1;
+
+            value = prompt("Write the number of the table to print ");
+            // document.getElementById('header').innerHTML = 'This is the table of the ' + value;
+
+                let title = document.createElement('h1');
+                let sometext = document.createTextNode('This is the table of the ' + value);
+                title.appendChild(sometext);
+                document.getElementsByTagName('div')[0].appendChild(title);
+
+            if (value == 10) {
+                alert("Im sorry, we can´t print this number ");
+            } else {
+                while (i < 10) {
+                    // document.getElementById('parraf').innerHTML = value +" x "+i+" = " +(value*i);
+                    let parraf = document.createElement('p');
+                    let textParraf = document.createTextNode(value + " x " + i + " = " + (value * i));
+                    parraf.appendChild(textParraf);
+                    document.getElementsByTagName('div')[0].appendChild(parraf);
+
+                    array.push(value * i);
+                    i++;
+                }
+
+                let some = document.createElement('p');
+                let sometext = document.createTextNode(array);
+                some.appendChild(sometext);
+                document.getElementsByTagName('div')[0].appendChild(some);
+            }
+
+            response = prompt("Would you like print another table 1 = yes, 2=no");
+
+            if(response==="yes"){
+                document.getElementById('container').innerHTML = "";
+            }
+
+        } while (response === "yes");
+
+
+    </script>
+
+
+</body>
+
+</html>
